@@ -13,9 +13,18 @@ struct ContentView: View {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundStyle(.tint)
+                .onLongPressGesture(minimumDuration: 1) {
+                    print("Long pressed!")
+                } onPressingChanged: { inProgress in
+                    print("In progress: \(inProgress)!")
+                }
+
             Text("Hello, world!")
+                .onLongPressGesture {
+                    print("Long pressed!")
+                }
         }
-        .padding()
+        
     }
 }
 
